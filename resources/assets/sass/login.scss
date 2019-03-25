@@ -1,3 +1,101 @@
-.title{
-  color: red;
+.page-log {
+  width: 100% !important;
+  height: 100vh !important;
+  position: relative;
+  /* Portrait */
+  @media only screen and (max-width: 767px){
+    .sm-log{
+      height: 100%;
+      .xs-login-title{
+        display: none;
+      }
+      .head-log{
+        margin-left: 2em;
+        margin-right: 2em;
+        .logo-log{
+          width: 150px;
+          height: 150px;
+        }
+        .btn-log{
+          width: 100%;
+        }
+        .mb-2{
+          margin-bottom: 0.25rem !important;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1119px) {
+    .sm-log{
+      height: 100%;
+      text-align: -webkit-center;
+      .head-log{
+        width: 90%;
+        background: pink;
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .logo-log{
+          width: 200px;
+          height: 200px;
+        }
+        .btn-log{
+          width: 100%;
+        }
+
+        .m-row-login{
+          margin-left: 2em;
+          margin-right: 2em;
+          .text-center{
+            text-align: center !important;
+          }
+          .login-title{
+            font-family: "Nunito", sans-serif;
+            font-weight: initial;
+            font-style: initial;
+            font-size: xx-large;
+          }
+          .ml-div-login{
+            margin: auto;
+          }
+          .xs-login-title{
+            text-align: center !important;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .sm-log{
+      height: 100%;
+      //margin-top: 3em !important;
+      text-align: -webkit-center;
+      .head-log{
+        width: 90%;
+        background: pink;
+        border-radius: 10px;
+        .logo-log{
+          width: 250px;
+          height: 250px;
+        }
+        .btn-log{
+          width: 100%;
+        }
+        .mt-2{
+          margin-top: 0.25rem !important;
+        }
+        .mb-2{
+          margin-bottom: 0.25rem !important;
+        }
+        .login-title{
+          font-family: "Nunito", sans-serif;
+          font-weight: initial;
+          font-style: initial;
+          font-size: xx-large;
+        }
+      }
+    }
+  }
 }
