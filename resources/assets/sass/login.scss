@@ -4,7 +4,7 @@
   position: relative;
   /* Portrait */
   @media only screen and (max-width: 767px){
-    .sm-log{
+    .content-login{
       height: 100%;
       .xs-login-title{
         display: none;
@@ -26,7 +26,7 @@
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1119px) {
-    .sm-log{
+    .content-login{
       height: 100%;
       text-align: -webkit-center;
       .head-log{
@@ -68,32 +68,43 @@
     }
   }
   @media only screen and (min-width: 1200px) {
-    .sm-log{
+    .content-login{
       height: 100%;
-      //margin-top: 3em !important;
       text-align: -webkit-center;
       .head-log{
-        width: 90%;
+        width: 50%;
         background: pink;
         border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         .logo-log{
-          width: 250px;
-          height: 250px;
+          width: 200px;
+          height: 200px;
         }
         .btn-log{
           width: 100%;
         }
-        .mt-2{
-          margin-top: 0.25rem !important;
-        }
-        .mb-2{
-          margin-bottom: 0.25rem !important;
-        }
-        .login-title{
-          font-family: "Nunito", sans-serif;
-          font-weight: initial;
-          font-style: initial;
-          font-size: xx-large;
+
+        .m-row-login{
+          margin-left: 2em;
+          margin-right: 2em;
+          .text-center{
+            text-align: center !important;
+          }
+          .login-title{
+            font-family: "Nunito", sans-serif;
+            font-weight: initial;
+            font-style: initial;
+            font-size: xx-large;
+          }
+          .ml-div-login{
+            margin: auto;
+          }
+          .xs-login-title{
+            text-align: center !important;
+          }
         }
       }
     }

@@ -21,6 +21,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
-    "moment": "^2.22.1"
+    "i18n": "^0.8.3",
+    "i18next": "^15.0.8",
+    "moment": "^2.22.1",
+    "sweetalert": "^2.1.2"
   }
 }

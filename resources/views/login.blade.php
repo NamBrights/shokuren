@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         <div class="page-log">
-            <div class="xs-log sm-log md-log lg-log">
+            <div class="content-login">
                 <div class="head-log">
                     <div class="row m-row-login">
                         <div class="col-xs-12 col-sm-12 text-center xs-login-title">
