@@ -313,9 +313,9 @@ body.swal2-toast-column .swal2-toast {
           align-items: center;
   width: auto;
   padding: 0.625em;
+  overflow-y: hidden;
   -webkit-box-shadow: 0 0 0.625em #d9d9d9;
-          box-shadow: 0 0 0.625em #d9d9d9;
-  overflow-y: hidden; }
+          box-shadow: 0 0 0.625em #d9d9d9; }
   .swal2-popup.swal2-toast .swal2-header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -633,6 +633,7 @@ body.swal2-no-backdrop .swal2-shown {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  z-index: 1060;
   top: 0;
   right: 0;
   bottom: 0;
@@ -648,9 +649,8 @@ body.swal2-no-backdrop .swal2-shown {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0.625em;
-  background-color: transparent;
-  z-index: 1060;
   overflow-x: hidden;
+  background-color: transparent;
   -webkit-overflow-scrolling: touch;
   /* stylelint-disable-line scss/no-duplicate-dollar-variables */
   /* stylelint-disable-line scss/no-duplicate-dollar-variables */
@@ -797,6 +797,8 @@ body.swal2-no-backdrop .swal2-shown {
 .swal2-popup {
   display: none;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -810,9 +812,7 @@ body.swal2-no-backdrop .swal2-shown {
   border-radius: 0.3125em;
   background: #fff;
   font-family: inherit;
-  font-size: 1rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  font-size: 1rem; }
   .swal2-popup:focus {
     outline: none; }
   .swal2-popup.swal2-loading {
@@ -841,6 +841,7 @@ body.swal2-no-backdrop .swal2-shown {
     text-transform: none;
     word-wrap: break-word; }
   .swal2-popup .swal2-actions {
+    z-index: 1;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-align: center;
@@ -849,8 +850,7 @@ body.swal2-no-backdrop .swal2-shown {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 1.25em auto 0;
-    z-index: 1; }
+    margin: 1.25em auto 0; }
     .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
       opacity: .4; }
     .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
@@ -860,20 +860,20 @@ body.swal2-no-backdrop .swal2-shown {
       background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2)));
       background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
     .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       width: 2.5em;
       height: 2.5em;
       margin: .46875em;
       padding: 0;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
       border: .25em solid transparent;
       border-radius: 100%;
       border-color: transparent;
       background-color: transparent !important;
       color: transparent;
       cursor: default;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
-              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
@@ -882,24 +882,24 @@ body.swal2-no-backdrop .swal2-shown {
       margin-right: 30px;
       margin-left: 30px; }
     .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      content: '';
       display: inline-block;
       width: 15px;
       height: 15px;
       margin-left: 5px;
+      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+              animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
       border: 3px solid #999999;
       border-radius: 50%;
       border-right-color: transparent;
       -webkit-box-shadow: 1px 1px 1px #fff;
-              box-shadow: 1px 1px 1px #fff;
-      content: '';
-      -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
-              animation: swal2-rotate-loading 1.5s linear 0s infinite normal; }
+              box-shadow: 1px 1px 1px #fff; }
   .swal2-popup .swal2-styled {
     margin: .3125em;
     padding: .625em 2em;
-    font-weight: 500;
     -webkit-box-shadow: none;
-            box-shadow: none; }
+            box-shadow: none;
+    font-weight: 500; }
     .swal2-popup .swal2-styled:not([disabled]) {
       cursor: pointer; }
     .swal2-popup .swal2-styled.swal2-confirm {
@@ -944,6 +944,7 @@ body.swal2-no-backdrop .swal2-shown {
     width: 1.2em;
     height: 1.2em;
     padding: 0;
+    overflow: hidden;
     -webkit-transition: color 0.1s ease-out;
     transition: color 0.1s ease-out;
     border: none;
@@ -954,8 +955,7 @@ body.swal2-no-backdrop .swal2-shown {
     font-family: serif;
     font-size: 2.5em;
     line-height: 1.2;
-    cursor: pointer;
-    overflow: hidden; }
+    cursor: pointer; }
     .swal2-popup .swal2-close:hover {
       -webkit-transform: none;
               transform: none;
@@ -968,6 +968,7 @@ body.swal2-no-backdrop .swal2-shown {
   .swal2-popup > .swal2-checkbox {
     display: none; }
   .swal2-popup .swal2-content {
+    z-index: 1;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -977,7 +978,6 @@ body.swal2-no-backdrop .swal2-shown {
     font-size: 1.125em;
     font-weight: 300;
     line-height: normal;
-    z-index: 1;
     word-wrap: break-word; }
   .swal2-popup #swal2-content {
     text-align: center; }
@@ -991,6 +991,8 @@ body.swal2-no-backdrop .swal2-shown {
   .swal2-popup .swal2-input,
   .swal2-popup .swal2-file,
   .swal2-popup .swal2-textarea {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 100%;
     -webkit-transition: border-color .3s, -webkit-box-shadow .3s;
     transition: border-color .3s, -webkit-box-shadow .3s;
@@ -999,11 +1001,9 @@ body.swal2-no-backdrop .swal2-shown {
     border: 1px solid #d9d9d9;
     border-radius: 0.1875em;
     background: inherit;
-    font-size: 1.125em;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+    font-size: 1.125em; }
     .swal2-popup .swal2-input.swal2-inputerror,
     .swal2-popup .swal2-file.swal2-inputerror,
     .swal2-popup .swal2-textarea.swal2-inputerror {
@@ -1091,25 +1091,25 @@ body.swal2-no-backdrop .swal2-shown {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0.625em;
+    overflow: hidden;
     background: #f0f0f0;
     color: #666666;
     font-size: 1em;
-    font-weight: 300;
-    overflow: hidden; }
+    font-weight: 300; }
     .swal2-popup .swal2-validation-message::before {
+      content: '!';
       display: inline-block;
       width: 1.5em;
       min-width: 1.5em;
       height: 1.5em;
       margin: 0 .625em;
+      zoom: normal;
       border-radius: 50%;
       background-color: #f27474;
       color: #fff;
       font-weight: 600;
       line-height: 1.5em;
-      text-align: center;
-      content: '!';
-      zoom: normal; }
+      text-align: center; }
 
 @supports (-ms-accelerator: true) {
   .swal2-range input {
@@ -1129,23 +1129,23 @@ body.swal2-no-backdrop .swal2-shown {
 
 .swal2-icon {
   position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 5em;
   height: 5em;
   margin: 1.25em auto 1.875em;
+  zoom: normal;
   border: .25em solid transparent;
   border-radius: 50%;
   line-height: 5em;
   cursor: default;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none;
-  zoom: normal; }
+          user-select: none; }
   .swal2-icon::before {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1222,31 +1222,31 @@ body.swal2-no-backdrop .swal2-shown {
         border-radius: 0 7.5em 7.5em 0; }
     .swal2-icon.swal2-success .swal2-success-ring {
       position: absolute;
+      z-index: 2;
       top: -.25em;
       left: -.25em;
+      -webkit-box-sizing: content-box;
+              box-sizing: content-box;
       width: 100%;
       height: 100%;
       border: 0.25em solid rgba(165, 220, 134, 0.3);
-      border-radius: 50%;
-      z-index: 2;
-      -webkit-box-sizing: content-box;
-              box-sizing: content-box; }
+      border-radius: 50%; }
     .swal2-icon.swal2-success .swal2-success-fix {
       position: absolute;
+      z-index: 1;
       top: .5em;
       left: 1.625em;
       width: .4375em;
       height: 5.625em;
       -webkit-transform: rotate(-45deg);
-              transform: rotate(-45deg);
-      z-index: 1; }
+              transform: rotate(-45deg); }
     .swal2-icon.swal2-success [class^='swal2-success-line'] {
       display: block;
       position: absolute;
+      z-index: 2;
       height: .3125em;
       border-radius: .125em;
-      background-color: #a5dc86;
-      z-index: 2; }
+      background-color: #a5dc86; }
       .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
         top: 2.875em;
         left: .875em;
@@ -1272,14 +1272,14 @@ body.swal2-no-backdrop .swal2-shown {
     display: inline-block;
     position: relative; }
   .swal2-progress-steps .swal2-progress-step {
+    z-index: 20;
     width: 2em;
     height: 2em;
     border-radius: 2em;
     background: #3085d6;
     color: #fff;
     line-height: 2em;
-    text-align: center;
-    z-index: 20; }
+    text-align: center; }
     .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
       background: #3085d6; }
       .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
@@ -1288,11 +1288,11 @@ body.swal2-no-backdrop .swal2-shown {
       .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
         background: #add8e6; }
   .swal2-progress-steps .swal2-progress-step-line {
+    z-index: 10;
     width: 2.5em;
     height: .4em;
     margin: 0 -1px;
-    background: #3085d6;
-    z-index: 10; }
+    background: #3085d6; }
 
 [class^='swal2'] {
   -webkit-tap-highlight-color: transparent; }
@@ -1360,6 +1360,11 @@ body.swal2-no-backdrop .swal2-shown {
         display: none; }
       body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
         position: initial !important; } }
+/*!
+ * Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
 .fa,
 .fas,
 .far,
@@ -1644,6 +1649,10 @@ readers do not read off random characters that represent icons */
 
 .fa-air-freshener:before {
   content: "\F5D0";
+}
+
+.fa-airbnb:before {
+  content: "\F834";
 }
 
 .fa-algolia:before {
@@ -1982,6 +1991,10 @@ readers do not read off random characters that represent icons */
   content: "\F241";
 }
 
+.fa-battle-net:before {
+  content: "\F835";
+}
+
 .fa-bed:before {
   content: "\F236";
 }
@@ -2130,6 +2143,10 @@ readers do not read off random characters that represent icons */
   content: "\F02E";
 }
 
+.fa-bootstrap:before {
+  content: "\F836";
+}
+
 .fa-bowling-ball:before {
   content: "\F436";
 }
@@ -2180,6 +2197,10 @@ readers do not read off random characters that represent icons */
 
 .fa-btc:before {
   content: "\F15A";
+}
+
+.fa-buffer:before {
+  content: "\F837";
 }
 
 .fa-bug:before {
@@ -2532,6 +2553,10 @@ readers do not read off random characters that represent icons */
 
 .fa-chrome:before {
   content: "\F268";
+}
+
+.fa-chromecast:before {
+  content: "\F838";
 }
 
 .fa-church:before {
@@ -3216,6 +3241,10 @@ readers do not read off random characters that represent icons */
 
 .fa-euro-sign:before {
   content: "\F153";
+}
+
+.fa-evernote:before {
+  content: "\F839";
 }
 
 .fa-exchange-alt:before {
@@ -4256,6 +4285,10 @@ readers do not read off random characters that represent icons */
 
 .fa-italic:before {
   content: "\F033";
+}
+
+.fa-itch-io:before {
+  content: "\F83A";
 }
 
 .fa-itunes:before {
@@ -5538,6 +5571,10 @@ readers do not read off random characters that represent icons */
   content: "\F267";
 }
 
+.fa-salesforce:before {
+  content: "\F83B";
+}
+
 .fa-sass:before {
   content: "\F41E";
 }
@@ -5910,6 +5947,10 @@ readers do not read off random characters that represent icons */
   content: "\F3F3";
 }
 
+.fa-speaker-deck:before {
+  content: "\F83C";
+}
+
 .fa-spider:before {
   content: "\F717";
 }
@@ -6128,6 +6169,10 @@ readers do not read off random characters that represent icons */
 
 .fa-swimming-pool:before {
   content: "\F5C5";
+}
+
+.fa-symfony:before {
+  content: "\F83D";
 }
 
 .fa-synagogue:before {
@@ -6806,6 +6851,14 @@ readers do not read off random characters that represent icons */
   content: "\F773";
 }
 
+.fa-wave-square:before {
+  content: "\F83E";
+}
+
+.fa-waze:before {
+  content: "\F83F";
+}
+
 .fa-weebly:before {
   content: "\F5CC";
 }
@@ -6954,6 +7007,10 @@ readers do not read off random characters that represent icons */
   content: "\F19E";
 }
 
+.fa-yammer:before {
+  content: "\F840";
+}
+
 .fa-yandex:before {
   content: "\F413";
 }
@@ -7015,13 +7072,18 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+/*!
+ * Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?414ff5daad323a1c47c5177d4bd29674);
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?414ff5daad323a1c47c5177d4bd29674) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?65779ebcc35604a25c2ba77309c5b8af) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff?5dd3976cb5d61e2e561f2a46b916f377) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?f6c6f6c8cb7784254ad00056f6fbd74e) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg?e7e957c87c454bccaa3bf9fdaa6874f8) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?dcce4b7fbd5e895561e18af4668265af);
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?dcce4b7fbd5e895561e18af4668265af) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?e6257a726a0cf6ec8c6fec22821c055f) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff?427d721b86fc9c68b2e85ad42b69238c) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?65b9977aa23185e8964b36eddbce7a20) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg?5eb754ab7dbd2fee562360528db4c3c0) format("svg");
 }
 
 .far {
@@ -7029,13 +7091,18 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+/*!
+ * Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
   font-display: auto;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?b5596f4d339f99e3d69bc41be78db962);
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?b5596f4d339f99e3d69bc41be78db962) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?462806316fea535a6a57651bc2b000b0) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?61969d433bf265b9717a6c357a1e04e4) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?b70cea0339374107969eb53e5b1f603f) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?82905d8d1c06969df11c8c378e9bdd4c) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?46e7cec623d8bd790d9fdbc8de2d3ee7);
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?46e7cec623d8bd790d9fdbc8de2d3ee7) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?418dad87601f9c8abd0e5798c0dc1feb) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?a7140145ebaaf5fb14e40430af5d25c4) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?ff8d9f8adb0d09f11d4816a152672f53) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?49279363201ed19a840796e05a74a91b) format("svg");
 }
 
 .fa,
@@ -7044,13 +7111,18 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+/*!
+ * Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
 @font-face {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
   font-display: auto;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?d9d17590c975aad1be0ddab673f9c769);
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?d9d17590c975aad1be0ddab673f9c769) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?4b115e1153a9ea339d6a0bb284cc8ed3) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff?b90365bccdabd68c6c03902b4b141f09) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?c39278f7abfc798a241551194f55e29f) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg?80533988ff5fecd5be26557d08ce8237) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?a7b95dbdd87e0c809570affaf366a434);
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?a7b95dbdd87e0c809570affaf366a434) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?5e2f92123d241cabecf0b289b9b08d4a) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff?2ef8ba3410dcc71578a880e7064acd7a) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?98b6db59be947f563350d2284fc9ea36) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg?5bf145531213545e03ff41cd27df7d2b) format("svg");
 }
 
 .fab {
